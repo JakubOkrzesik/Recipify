@@ -1,26 +1,42 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1>Recipify</h1>
+  <div>
+    <IngredientsForm :recipes="recipes" @setRecipes="setRecipes"></IngredientsForm>
+    <RecipeBlockHandler :recipes="recipes"></RecipeBlockHandler>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import IngredientsForm from './components/IngredientsForm.vue';
+import RecipeBlockHandler from './components/RecipeBlockHandler.vue';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld,
+  data(){
+    return {
+      recipes: [],
+    }
   },
+  methods: {
+    setRecipes(newRecipes){
+      this.recipes = newRecipes
+    }
+  },
+  components: {
+    IngredientsForm,
+    RecipeBlockHandler
+  }
 };
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+*{
+  font-family: monospace;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #FFEEDB;
 }
 </style>
