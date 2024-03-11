@@ -1,3 +1,7 @@
+# Recipify
+
+The app enables its users to input ingredients they want to make a meal with and the app returns a list of recipes that are compatible with the user's search. Edamam API is used to query and receive the recipes.
+
 # vue-cli
 
 ## Project setup
